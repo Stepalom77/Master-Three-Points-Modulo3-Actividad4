@@ -51,15 +51,15 @@ const createReview = async (req, res) => {
 
 const updateReview = async (req, res) => {
   let reviewId = req.params.id;
-  let { title, price, description, image } = req.body;
+  let { username, title, movieTitle, description } = req.body;
   let reviewToUpdate = null;
   try {
     reviewToUpdate = await reviews.findByPk(reviewId)
     reviewToUpdate = await reviews.update({
-      title: title,
-      price: price,
-      description: description,
-      image: image
+        username: username,
+        title: title,
+        movieTitle: movieTitle,
+        description: description
     },
       {
         where: {

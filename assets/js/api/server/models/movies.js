@@ -3,32 +3,28 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class reviews extends Model {
+  class movies extends Model {
   }
-  reviews.init({
+  movies.init({
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     title: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    movieTitle: {
       type: DataTypes.STRING,
       allowNull: false
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   }, {
     sequelize,
-    modelName: 'reviews',
+    modelName: 'movies',
   });
-  return reviews;
+  return movies;
 };

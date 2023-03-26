@@ -27,7 +27,9 @@ app.use(cors());
 
 //Routes
 const reviewsRoutes = require('./server/routes/reviewsRoutes')
+const moviesRoutes = require('./server/routes/moviesRoutes')
 app.use('/api', reviewsRoutes)
+app.use('/api', moviesRoutes)
 app.get('/', (req, res) => {
     res.send('Servidor en linea');
 })
