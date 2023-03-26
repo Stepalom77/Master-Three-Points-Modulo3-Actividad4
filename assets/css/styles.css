@@ -1,0 +1,20 @@
+#background {
+    background-color: #8cceed;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#navbar-home {
+    color: #0a3a50;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#navbar-link {
+    color: #1c739c;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#title {
+    font-weight: bolder;
+}
