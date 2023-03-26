@@ -26,7 +26,8 @@ app.use(morgan('dev'));
 app.use(cors());
 
 //Routes
-app.use('/api', productsRoute)
+const reviewsRoutes = require('./server/routes/reviewsRoutes')
+app.use('/api', reviewsRoutes)
 app.get('/', (req, res) => {
     res.send('Servidor en linea');
 })
