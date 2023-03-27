@@ -18,3 +18,11 @@
 #title {
     font-weight: bolder;
 }
+
+#sub-title {
+    font-weight: bold;
+}
+
+#show-reviews {
+    flex-wrap: wrap;
+}
