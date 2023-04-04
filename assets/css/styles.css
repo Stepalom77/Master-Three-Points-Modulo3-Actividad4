@@ -3,6 +3,14 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#button {
+    color: white;
+    font-size: medium;
+    background-color: #1c739c;
+    font-weight: 500;
+    padding: 10px 40px 10px 40px
+  }
+
 #navbar-home {
     color: #0a3a50;
     font-weight: bolder;
@@ -23,6 +31,25 @@
     font-weight: bold;
 }
 
-#show-reviews {
+#show-reviews  {
     flex-wrap: wrap;
+}
+
+#show-peliculas {
+    flex-wrap: wrap;
+}
+
+#card {
+    background-color: transparent;
+    border: none;
+    width: 50rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #card {
+        background-color: transparent;
+        border: none;
+        width: 190rem;
+    }
 }

@@ -12,17 +12,17 @@
 
   <nav class="navbar navbar-expand-lg bg-light ">
     <div class="container-fluid">
-      <a class="navbar-brand ms-3" id="navbar-home">NiuCine</a>
+      <a class="navbar-brand ms-3" id="navbar-home" onclick="reviews()" >NiuCine</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item ms-lg-5">
-            <a class="nav-link active" id="navbar-link" aria-current="page" href="#">Películas</a>
+            <a class="nav-link active" id="navbar-link" aria-current="page" onclick="movies()">Películas</a>
           </li>
           <li class="nav-item ms-lg-5">
-            <a class="nav-link" id="navbar-link">Agregue una película</a>
+            <a class="nav-link" id="navbar-link" onclick="showCreateMovie()" >Agregue una película</a>
           </li>
           <li class="nav-item ms-lg-5">
             <a class="nav-link"  id="navbar-link">Haga una reseña</a>
@@ -47,6 +47,38 @@
         <h2 class="my-3" id="title">Últimas reseñas</h2>
     </div>
     <div class="d-flex justify-content-evenly" id="show-reviews"></div>
+  </div>
+
+  <div class="container-fluid text-center px-3" id="movies" hidden="true">
+    <div class="row">
+        <h2 class="my-3" id="title">Todas las películas</h2>
+    </div>
+    <div class="d-flex justify-content-evenly" id="show-peliculas"></div>
+  </div>
+
+  <div class="container-fluid text-center" id="create-movie" hidden="true">
+    <div class="row">
+      <h2 class="my-3" id="title">Agregue una película</h2>
+    </div>
+    <div class="container">
+        <div class="card-body">
+          <div class="mb-3 px-5">
+            <label for="movie-title" class="form-label">Nombre de la película</label>
+            <input type="text" class="form-control " aria-label="Title" aria-describedby="label-title" id="movie-title">
+          </div>
+          <div class="mb-3 px-5">
+            <label for="movie-description" class="form-label">Descripción</label>
+            <textarea class="form-control " aria-label="Descripción" id="movie-description"></textarea>
+          </div>
+          <div class="px-5 mb-3">
+            <label for="movie-image" class="form-label">Escoja una imagen para la película:</label>
+            <input class="form-control " type="file" id="movie-image">
+          </div>
+          <div class="text-center">
+            <div class="btn btn-sm" onclick="createMovie()" id="button">Registrar Película</div>
+          </div>
+        </div>
+    </div>
   </div>
     
     <script src="./assets/js/app/app.js"></script>
