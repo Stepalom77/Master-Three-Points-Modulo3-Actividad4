@@ -9,7 +9,7 @@
     <title>Actividad 4</title>
 </head>
 <body id="background">
-
+<!--Navbar-->
   <nav class="navbar navbar-expand-lg bg-light ">
     <div class="container-fluid">
       <a class="navbar-brand ms-3" id="navbar-home" onclick="reviews()" >NiuCine</a>
@@ -25,12 +25,14 @@
             <a class="nav-link" id="navbar-link" onclick="showCreateMovie()" >Agregue una película</a>
           </li>
           <li class="nav-item ms-lg-5">
-            <a class="nav-link"  id="navbar-link">Haga una reseña</a>
+            <a class="nav-link"  id="navbar-link" onclick="showCreateReview()" >Haga una reseña</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!--Home-->
 
   <div class="container-fluid text-center">
     <div class="row">
@@ -49,12 +51,16 @@
     <div class="d-flex justify-content-evenly" id="show-reviews"></div>
   </div>
 
+  <!--Peliculas-->
+
   <div class="container-fluid text-center px-3" id="movies" hidden="true">
     <div class="row">
         <h2 class="my-3" id="title">Todas las películas</h2>
     </div>
     <div class="d-flex justify-content-evenly" id="show-peliculas"></div>
   </div>
+
+  <!--Agregar peliculas-->
 
   <div class="container-fluid text-center" id="create-movie" hidden="true">
     <div class="row">
@@ -64,11 +70,11 @@
         <div class="card-body">
           <div class="mb-3 px-5">
             <label for="movie-title" class="form-label">Nombre de la película</label>
-            <input type="text" class="form-control " aria-label="Title" aria-describedby="label-title" id="movie-title">
+            <input type="text" class="form-control " aria-label="Title" id="movie-title">
           </div>
           <div class="mb-3 px-5">
             <label for="movie-description" class="form-label">Descripción</label>
-            <textarea class="form-control " aria-label="Descripción" id="movie-description"></textarea>
+            <textarea class="form-control " aria-label="Description" id="movie-description"></textarea>
           </div>
           <div class="px-5 mb-3">
             <label for="movie-image" class="form-label">Escoja una imagen para la película:</label>
@@ -80,6 +86,101 @@
         </div>
     </div>
   </div>
+
+    <!--Modificar peliculas-->
+
+    <div class="container-fluid text-center" id="update-movie" hidden="true">
+      <div class="row">
+        <h2 class="my-3" id="title">Modificar una película</h2>
+      </div>
+      <div class="container">
+          <div class="card-body">
+            <div class="mb-3 px-5">
+              <label for="movie-title-update" class="form-label">Nombre de la película</label>
+              <input type="text" class="form-control " aria-label="Title" id="movie-title-update">
+            </div>
+            <div class="mb-3 px-5">
+              <label for="movie-description-update" class="form-label">Descripción</label>
+              <textarea class="form-control " aria-label="Description" id="movie-description-update"></textarea>
+            </div>
+            <div class="px-5 mb-3">
+              <label for="movie-image-update" class="form-label">Imagen</label>
+              <input class="form-control " type="file" id="movie-image-update">
+            </div>
+            <div class="text-center">
+              <div class="btn btn-sm mb-3" onclick="updateMovie()" id="button">Modificar Película</div>
+            </div>
+            <div class="text-center">
+              <div class="btn btn-sm btn-danger " onclick="deleteMovie()" id="button-delete">Borrar Película</div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  <!--Agregar reviews-->
+
+  <div class="container-fluid text-center" id="create-review" hidden="true">
+    <div class="row">
+      <h2 class="my-3" id="title">Escriba una review</h2>
+    </div>
+    <div class="container mb-5">
+        <div class="card-body">
+          <div class="mb-3 px-5">
+            <label for="review-user" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control " aria-label="User"  id="review-user">
+          </div>
+          <div class="mb-3 px-5">
+            <label for="review-title" class="form-label">Título de la reseña</label>
+            <input type="text" class="form-control " aria-label="Title"  id="review-title">
+          </div>
+          <div class="mb-3 px-5">
+            <label for="review-movie-title" class="form-label">Título de la película</label>
+            <input type="text" class="form-control " aria-label="Name"  id="review-movie-title">
+          </div>
+          <div class="mb-3 px-5">
+            <label for="review-description" class="form-label">Escriba su reseña</label>
+            <textarea class="form-control " aria-label="Description" id="review-description"></textarea>
+          </div>
+          <div class="text-center">
+            <div class="btn btn-sm" onclick="createReview()" id="button">Registrar Película</div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <!--Modificar reviews-->
+
+    <div class="container-fluid text-center" id="update-review" hidden="true">
+      <div class="row">
+        <h2 class="my-3" id="title">Modificar una review</h2>
+      </div>
+      <div class="container">
+          <div class="card-body">
+            <div class="mb-3 px-5">
+              <label for="review-user-update" class="form-label">Nombre de usuario</label>
+              <input type="text" class="form-control " aria-label="User"  id="review-user-update">
+            </div>
+            <div class="mb-3 px-5">
+              <label for="review-title-update" class="form-label">Título de la reseña</label>
+              <input type="text" class="form-control " aria-label="Title"  id="review-title-update">
+            </div>
+            <div class="mb-3 px-5">
+              <label for="review-movie-title-update" class="form-label">Título de la película</label>
+              <input type="text" class="form-control " aria-label="Name"  id="review-movie-title-update">
+            </div>
+            <div class="mb-3 px-5">
+              <label for="review-description-update" class="form-label">Escriba su reseña</label>
+              <textarea class="form-control " aria-label="Description" id="review-description-update"></textarea>
+            </div>
+            <div class="text-center">
+              <div class="btn btn-sm mb-3" onclick="updateReview()" id="button">Modificar Reseña</div>
+            </div>
+            <div class="text-center">
+              <div class="btn btn-sm btn-danger" onclick="deleteReview()" id="button-delete">Borrar Reseña</div>
+            </div>
+          </div>
+      </div>
+    </div>
     
     <script src="./assets/js/app/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

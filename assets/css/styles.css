@@ -39,17 +39,14 @@
     flex-wrap: wrap;
 }
 
-#card {
-    background-color: transparent;
-    border: none;
-    width: 50rem;
-}
+
+#button-delete {
+    font-size: medium;
+    font-weight: 500;
+    padding: 10px 40px 10px 40px
+  }
 
 @media only screen and (max-width: 600px) {
 
-    #card {
-        background-color: transparent;
-        border: none;
-        width: 190rem;
-    }
+
 }
